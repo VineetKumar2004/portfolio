@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vineet Kumar | AI & Software Engineer</title>
+    <title>Vineet Kumar | Software Engineer</title>
     <style>
         :root {
             --primary: #00ADB5;
@@ -21,6 +21,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--dark);
             color: var(--text-main);
@@ -29,27 +33,30 @@
 
         /* Navigation */
         nav {
-            background: var(--gray);
+            background: rgba(57, 62, 70, 0.95);
             padding: 1rem 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--primary);
+            letter-spacing: 1px;
         }
 
         .nav-links a {
             color: var(--text-main);
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
@@ -69,43 +76,97 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .hero p {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
+        /* NEW ATTRACTIVE TEXT STYLE */
+        .hero-subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            
+            /* Gradient Text Effect */
+            background: linear-gradient(90deg, #00ADB5, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            
+            /* Animation */
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
         }
 
         .btn {
             display: inline-block;
             background: var(--primary);
             color: #fff;
-            padding: 10px 30px;
+            padding: 12px 35px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            border-radius: 50px;
+            transition: all 0.3s;
             font-weight: bold;
+            border: 2px solid var(--primary);
         }
 
         .btn:hover {
             background: #007f85;
+            border-color: #007f85;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
         }
 
         /* Sections General */
         section {
-            padding: 60px 10%;
+            padding: 80px 10%;
         }
 
         h2 {
             font-size: 2.5rem;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             text-align: center;
-            border-bottom: 2px solid var(--primary);
+            position: relative;
             display: inline-block;
-            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
         .section-title-container {
@@ -115,31 +176,43 @@
         /* Projects Grid */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .card {
             background: var(--gray);
-            padding: 25px;
-            border-radius: 10px;
-            transition: transform 0.3s;
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary);
         }
 
         .card h3 {
             color: var(--primary);
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #ccc;
+            margin-bottom: 20px;
         }
 
         .card .tech-stack {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-top: 15px;
-            font-weight: bold;
+            font-family: monospace;
+            background: rgba(0,0,0,0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
         }
 
         /* Skills */
@@ -148,20 +221,31 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .skill-tag {
-            background: var(--gray);
+            background: rgba(0, 173, 181, 0.1);
             border: 1px solid var(--primary);
-            padding: 10px 20px;
-            border-radius: 25px;
+            color: var(--text-main);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            cursor: default;
         }
 
         /* Education & Achievements Timeline style */
         .timeline-item {
             border-left: 3px solid var(--primary);
-            padding-left: 20px;
-            margin-bottom: 30px;
+            padding-left: 25px;
+            margin-bottom: 40px;
             position: relative;
         }
 
@@ -169,7 +253,8 @@
             content: '';
             width: 15px;
             height: 15px;
-            background: var(--primary);
+            background: var(--dark);
+            border: 3px solid var(--primary);
             border-radius: 50%;
             position: absolute;
             left: -9px;
@@ -180,43 +265,52 @@
             font-size: 0.9rem;
             color: var(--primary);
             margin-bottom: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
         }
 
         /* Contact Footer */
         footer {
-            background: var(--gray);
+            background: #1a1d24;
             text-align: center;
-            padding: 40px;
+            padding: 60px 20px;
             margin-top: 50px;
+            border-top: 1px solid var(--gray);
         }
 
         .social-links {
-            margin-top: 25px;
+            margin-top: 30px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
 
         .social-links a {
-            color: var(--light);
+            color: var(--text-main);
             text-decoration: none;
-            font-size: 1.1rem;
-            border: 1px solid var(--primary);
-            padding: 8px 16px;
-            border-radius: 5px;
+            font-size: 1rem;
+            border: 1px solid var(--gray);
+            padding: 10px 20px;
+            border-radius: 8px;
             transition: all 0.3s;
+            background: var(--gray);
         }
 
         .social-links a:hover {
             background: var(--primary);
+            border-color: var(--primary);
             color: white;
+            transform: translateY(-3px);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified for mobile */
+            .hero h1 { font-size: 2.8rem; }
+            .hero-subtitle { font-size: 1.4rem; }
+            .nav-links { display: none; }
+            .btn-container { flex-direction: column; width: 100%; }
+            .btn { width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -235,10 +329,12 @@
 
     <header class="hero" id="about">
         <h1>Hi, I'm Vineet.</h1>
-        <p>AI Student | Python Developer | Problem Solver</p>
-        <div>
+        
+        <p class="hero-subtitle">Computer Science Enthusiast <br> & Software Engineer</p>
+        
+        <div class="btn-container">
             <a href="#projects" class="btn">View My Work</a>
-            <a href="https://github.com/VineetKumar2004" target="_blank" class="btn" style="background:transparent; border: 2px solid var(--primary); margin-left:10px;">GitHub</a>
+            <a href="https://github.com/VineetKumar2004" target="_blank" class="btn btn-outline">GitHub Profile</a>
         </div>
     </header>
 
@@ -290,7 +386,7 @@
                     <div class="timeline-date">2023 - 2026</div>
                     <h3>B.Sc. in Artificial Intelligence</h3>
                     <p>Central Tribal University of Andhra Pradesh</p>
-                    <p>SGPA: 7.9</p>
+                    [cite_start]<p style="color: var(--text-secondary);">SGPA: 7.9 [cite: 3, 5, 6]</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2022</div>
@@ -303,15 +399,15 @@
                 <h2>Key Achievements</h2>
                 <div class="timeline-item">
                     <h3>Top 4% in TCS CodeVita</h3>
-                    <p>Qualified Round 1 Season 13, top 4% among 5L+ participants.</p>
+                    [cite_start]<p>Qualified Round 1 Season 13, top 4% among 5L+ participants[cite: 35].</p>
                 </div>
                 <div class="timeline-item">
                     <h3>Coding Committee Member</h3>
-                    <p>Active member at Central Tribal University of AP.</p>
+                    [cite_start]<p>Active member at Central Tribal University of AP[cite: 36].</p>
                 </div>
                 <div class="timeline-item">
                     <h3>District Quiz Winner</h3>
-                    <p>Secured 2nd position at JNTU, Vizianagaram.</p>
+                    [cite_start]<p>Secured 2nd position at JNTU, Vizianagaram[cite: 39].</p>
                 </div>
             </div>
             
@@ -320,8 +416,8 @@
 
     <footer id="contact">
         <h2>Get In Touch</h2>
-        <p>Currently open for internships and projects.</p>
-        <p>📧 vineet6645@gmail.com | 📞 +91-9523235948</p>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">Currently open for internships and projects.</p>
+        <p style="font-size: 1.1rem;">📧 vineet6645@gmail.com | 📞 +91-9523235948</p>
         
         <div class="social-links">
             <a href="https://github.com/VineetKumar2004" target="_blank">GitHub</a>
@@ -331,7 +427,7 @@
             <a href="#" target="_blank">LinkedIn</a>
         </div>
         <br>
-        <p style="font-size: 0.8rem; color: gray;">© 2025 Vineet Kumar</p>
+        <p style="font-size: 0.8rem; color: gray; margin-top: 30px;">© 2025 Vineet Kumar</p>
     </footer>
 
 </body>
