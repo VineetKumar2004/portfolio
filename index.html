@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vineet Kumar | AI & Software Engineer</title>
+    <style>
+        :root {
+            --primary: #00ADB5;
+            --dark: #222831;
+            --light: #EEEEEE;
+            --gray: #393E46;
+            --text-main: #f8f9fa;
+            --text-secondary: #aab0b6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--gray);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 10px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #007f85;
+        }
+
+        /* Sections General */
+        section {
+            padding: 60px 10%;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title-container {
+            text-align: center;
+        }
+
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .card .tech-stack {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: var(--gray);
+            border: 1px solid var(--primary);
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
+        /* Education & Achievements Timeline style */
+        .timeline-item {
+            border-left: 3px solid var(--primary);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            left: -9px;
+            top: 0;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        /* Contact Footer */
+        footer {
+            background: var(--gray);
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Vineet Kumar</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Hi, I'm Vineet.</h1>
+        <p>AI Student | Python Developer | Problem Solver</p>
+        <div>
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="https://github.com/VineetKumar2004" target="_blank" class="btn" style="background:transparent; border: 2px solid var(--primary); margin-left:10px;">GitHub</a>
+        </div>
+    </header>
+
+    <section id="projects">
+        <div class="section-title-container">
+            <h2>Featured Projects</h2>
+        </div>
+        <div class="project-grid">
+            <div class="card">
+                <h3>Employee Management System</h3>
+                <p>A web-based dashboard to manage employees, departments, and roles efficiently with workforce insights.</p>
+                <div class="tech-stack">Django • HTML/CSS • SQLite</div>
+            </div>
+            <div class="card">
+                <h3>Smart Voice Assistant</h3>
+                <p>A real-time Python assistant that performs tasks like web browsing, sending WhatsApp messages, and fetching news via voice commands.</p>
+                <div class="tech-stack">Python • SpeechRecognition • APIs</div>
+            </div>
+            <div class="card">
+                <h3>Hospital Management System</h3>
+                <p>Streamlined hospital operations system covering patient management, appointments, billing, and room allocation.</p>
+                <div class="tech-stack">SQL • Database Management</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" style="background-color: var(--gray);">
+        <div class="section-title-container">
+            <h2>Technical Skills</h2>
+        </div>
+        <div class="skills-container">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">HTML & CSS</span>
+            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">Linux / Kali</span>
+            <span class="skill-tag">Git & GitHub</span>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div style="display: flex; flex-wrap: wrap; gap: 50px;">
+            
+            <div style="flex: 1; min-width: 300px;">
+                <h2>Education</h2>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2026</div>
+                    <h3>B.Sc. in Artificial Intelligence</h3>
+                    <p>Central Tribal University of Andhra Pradesh</p>
+                    <p>SGPA: 7.9 [cite: 3, 5, 6]</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <h3>Senior Secondary (XII)</h3>
+                    <p>Delhi Public School | 72.0%</p>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px;">
+                <h2>Key Achievements</h2>
+                <div class="timeline-item">
+                    <h3>Top 4% in TCS CodeVita</h3>
+                    <p>Qualified Round 1 Season 13, top 4% among 5L+ participants[cite: 35].</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Coding Committee Member</h3>
+                    <p>Active member at Central Tribal University of AP[cite: 36].</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>District Quiz Winner</h3>
+                    <p>Secured 2nd position at JNTU, Vizianagaram[cite: 39].</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <p>Currently open for internships and projects.</p>
+        <p>📧 vineet6645@gmail.com | 📞 +91-9523235948</p>
+        <div class="social-links">
+            <a href="https://github.com/VineetKumar2004">GitHub</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <br>
+        <p style="font-size: 0.8rem; color: gray;">© 2025 Vineet Kumar</p>
+    </footer>
+
+</body>
+</html>
