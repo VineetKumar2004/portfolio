@@ -21,9 +21,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: var(--dark);
@@ -60,9 +58,7 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
         /* Hero Section */
         .hero {
@@ -82,38 +78,29 @@
             letter-spacing: -1px;
         }
 
-        /* NEW ATTRACTIVE TEXT STYLE */
         .hero-subtitle {
             font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 40px;
-            
-            /* Gradient Text Effect */
             background: linear-gradient(90deg, #00ADB5, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            
-            /* Animation */
             opacity: 0;
             animation: fadeInUp 1.5s ease-out forwards;
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .btn-container {
             display: flex;
             gap: 15px;
             margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .btn {
@@ -141,15 +128,9 @@
             color: var(--primary);
         }
 
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
+        .btn-outline:hover { background: var(--primary); color: white; }
 
-        /* Sections General */
-        section {
-            padding: 80px 10%;
-        }
+        section { padding: 80px 10%; }
 
         h2 {
             font-size: 2.5rem;
@@ -158,7 +139,7 @@
             position: relative;
             display: inline-block;
         }
-        
+
         h2::after {
             content: '';
             display: block;
@@ -169,9 +150,7 @@
             border-radius: 2px;
         }
 
-        .section-title-container {
-            text-align: center;
-        }
+        .section-title-container { text-align: center; }
 
         /* Projects Grid */
         .project-grid {
@@ -194,16 +173,32 @@
             border-color: var(--primary);
         }
 
-        .card h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
         }
 
-        .card p {
-            color: #ccc;
-            margin-bottom: 20px;
+        .card h3 { color: var(--primary); font-size: 1.5rem; }
+
+        .project-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
         }
+
+        .project-links a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .card p { color: #ccc; margin-bottom: 20px; }
 
         .card .tech-stack {
             font-size: 0.85rem;
@@ -221,7 +216,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -235,13 +230,9 @@
             transition: all 0.3s;
         }
 
-        .skill-tag:hover {
-            background: var(--primary);
-            color: white;
-            cursor: default;
-        }
+        .skill-tag:hover { background: var(--primary); color: white; cursor: default; }
 
-        /* Education & Achievements Timeline style */
+        /* Education & Achievements Timeline */
         .timeline-item {
             border-left: 3px solid var(--primary);
             padding-left: 25px;
@@ -269,7 +260,6 @@
             text-transform: uppercase;
         }
 
-        /* Contact Footer */
         footer {
             background: #1a1d24;
             text-align: center;
@@ -314,6 +304,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -329,65 +320,99 @@
 
     <header class="hero" id="about">
         <h1>Hi, I'm Vineet.</h1>
-        
         <p class="hero-subtitle">Computer Science Enthusiast <br> & Software Engineer</p>
-        
+
+        <!-- UPDATED BUTTONS (NEW THINGS) -->
         <div class="btn-container">
             <a href="#projects" class="btn">View My Work</a>
-            <a href="https://github.com/VineetKumar2004" target="_blank" class="btn btn-outline">GitHub Profile</a>
+            <a href="YOUR_PORTFOLIO_LINK" target="_blank" class="btn btn-outline">🌐 Portfolio</a>
+            <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/" target="_blank" class="btn btn-outline">💼 LinkedIn</a>
+            <a href="https://github.com/VineetKumar2004" target="_blank" class="btn btn-outline">🐙 GitHub</a>
         </div>
     </header>
 
+    <!-- PROJECTS -->
     <section id="projects">
         <div class="section-title-container">
             <h2>Featured Projects</h2>
         </div>
+
         <div class="project-grid">
+
+            <!-- NEW PROJECT ADDED (WYREFLOW) -->
             <div class="card">
-                <h3>Employee Management System</h3>
-                <p>A web-based dashboard to manage employees, departments, and roles efficiently with workforce insights.</p>
-                <div class="tech-stack">Django • HTML/CSS • SQLite</div>
+                <div class="card-header">
+                    <h3>Wyreflow – About Page</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/VineetKumar2004/wyreflow-about_vineet" target="_blank">↗ Repo</a>
+                    </div>
+                </div>
+                <p>Developed a responsive About page using React.js with reusable components and optimized UI for desktop and mobile.</p>
+                <div class="tech-stack">React.js • JavaScript • HTML/CSS</div>
             </div>
+
             <div class="card">
-                <h3>Smart Voice Assistant</h3>
+                <div class="card-header">
+                    <h3>Employee Management System</h3>
+                    <div class="project-links">
+                        <a href="PASTE_EMPLOYEE_REPO_LINK" target="_blank">↗ Repo</a>
+                    </div>
+                </div>
+                <p>A web-based application to manage employees, departments, and roles efficiently with a dashboard for workforce insights.</p>
+                <div class="tech-stack">Django • HTML/CSS • JavaScript • SQLite</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Smart Voice Assistant</h3>
+                    <div class="project-links">
+                        <a href="PASTE_VOICE_ASSISTANT_REPO_LINK" target="_blank">↗ Repo</a>
+                    </div>
+                </div>
                 <p>A real-time Python assistant that performs tasks like web browsing, sending WhatsApp messages, and fetching news via voice commands.</p>
                 <div class="tech-stack">Python • SpeechRecognition • APIs</div>
             </div>
-            <div class="card">
-                <h3>Hospital Management System</h3>
-                <p>Streamlined hospital operations system covering patient management, appointments, billing, and room allocation.</p>
-                <div class="tech-stack">SQL • Database Management</div>
-            </div>
+
+            <!-- REMOVED HOSPITAL MANAGEMENT SYSTEM -->
+
         </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills" style="background-color: var(--gray);">
         <div class="section-title-container">
             <h2>Technical Skills</h2>
         </div>
+
         <div class="skills-container">
             <span class="skill-tag">Python</span>
             <span class="skill-tag">C++</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React.js</span>
             <span class="skill-tag">Django</span>
             <span class="skill-tag">SQL</span>
-            <span class="skill-tag">HTML & CSS</span>
-            <span class="skill-tag">Data Structures</span>
-            <span class="skill-tag">Linux / Kali</span>
+            <span class="skill-tag">DSA</span>
+            <span class="skill-tag">Linux</span>
             <span class="skill-tag">Git & GitHub</span>
         </div>
     </section>
 
+    <!-- EDUCATION + ACHIEVEMENTS -->
     <section id="achievements">
         <div style="display: flex; flex-wrap: wrap; gap: 50px;">
-            
             <div style="flex: 1; min-width: 300px;">
                 <h2>Education</h2>
+
                 <div class="timeline-item">
                     <div class="timeline-date">2023 - 2026</div>
                     <h3>B.Sc. in Artificial Intelligence</h3>
                     <p>Central Tribal University of Andhra Pradesh</p>
-                    [cite_start]<p style="color: var(--text-secondary);">SGPA: 7.9 [cite: 3, 5, 6]</p>
+                    <p style="color: var(--text-secondary);">SGPA: 7.9</p>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-date">2022</div>
                     <h3>Senior Secondary (XII)</h3>
@@ -397,37 +422,42 @@
 
             <div style="flex: 1; min-width: 300px;">
                 <h2>Key Achievements</h2>
+
                 <div class="timeline-item">
                     <h3>Top 4% in TCS CodeVita</h3>
-                    [cite_start]<p>Qualified Round 1 Season 13, top 4% among 5L+ participants[cite: 35].</p>
+                    <p>Qualified Round 1 Season 13, top 4% among 5L+ participants.</p>
                 </div>
+
                 <div class="timeline-item">
                     <h3>Coding Committee Member</h3>
-                    [cite_start]<p>Active member at Central Tribal University of AP[cite: 36].</p>
+                    <p>Active member at Central Tribal University of AP.</p>
                 </div>
+
                 <div class="timeline-item">
                     <h3>District Quiz Winner</h3>
-                    [cite_start]<p>Secured 2nd position at JNTU, Vizianagaram[cite: 39].</p>
+                    <p>Secured 2nd position at JNTU, Vizianagaram.</p>
                 </div>
             </div>
-            
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer id="contact">
         <h2>Get In Touch</h2>
         <p style="color: var(--text-secondary); margin-bottom: 20px;">Currently open for internships and projects.</p>
         <p style="font-size: 1.1rem;">📧 vineet6645@gmail.com | 📞 +91-9523235948</p>
-        
+
         <div class="social-links">
+            <a href="YOUR_PORTFOLIO_LINK" target="_blank">🌐 Portfolio</a>
+            <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/" target="_blank">💼 LinkedIn</a>
             <a href="https://github.com/VineetKumar2004" target="_blank">GitHub</a>
             <a href="https://leetcode.com/Vineet_Kumar2004/" target="_blank">LeetCode</a>
             <a href="https://www.geeksforgeeks.org/profile/vrkbrqa41" target="_blank">GeeksforGeeks</a>
             <a href="https://x.com/VineetKumarrrr" target="_blank">X (Twitter)</a>
-            <a href="#" target="_blank">LinkedIn</a>
         </div>
+
         <br>
-        <p style="font-size: 0.8rem; color: gray; margin-top: 30px;">© 2025 Vineet Kumar</p>
+        <p style="font-size: 0.8rem; color: gray; margin-top: 30px;">© 2026 Vineet Kumar</p>
     </footer>
 
 </body>
